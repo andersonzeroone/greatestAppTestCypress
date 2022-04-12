@@ -23,8 +23,27 @@ describe('AuthSigIn', () => {
     })
   });
 
+  it('loginNotFound', () => {
+    cy.visit(baseUrl);
 
-  it('loginEmailInvalid', () => {
+    cy.get(':nth-child(1) >> input').type('testa@gmail.com');
+
+    cy.get(':nth-child(2) >> input').type('123456');
+
+
+    cy.intercept('POST', '**/login').as('loginUser');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+    cy.wait('@loginUser').then(({ response }) => {
+      expect(response.statusCode).be.eq(401);
+      expect(response.body).has.property('message');
+      expect(response.body.message).is.not.null;
+    })
+  });
+
+
+  it.skip('loginEmailInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('agmail.com');
