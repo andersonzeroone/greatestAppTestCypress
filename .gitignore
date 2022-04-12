@@ -36,10 +36,13 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
-
+d.txt
 # Dependency directories
 node_modules/
 jspm_packages/
+LAB_TGL_API-master/
+front/
+cypreesIntro/
 
 # TypeScript v1 declaration files
 typings/
