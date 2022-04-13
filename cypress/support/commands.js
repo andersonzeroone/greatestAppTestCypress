@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('login', () => {
+  cy.visit('http://localhost:3000/');
+
+  cy.get(':nth-child(1) >> input').type('luby@admin.com');
+
+  cy.get(':nth-child(2) >> input').type('secret');
+
+
+  cy.intercept('POST', '**/login').as('loginUser');
+
+  cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  cy.wait('@loginUser').then(({ response }) => {
+    expect(response.statusCode).be.eq(200);
+    expect(response.body).has.property('token');
+    expect(response.body.token).is.not.null;
+  })
+});

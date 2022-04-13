@@ -131,7 +131,8 @@ describe('User', () => {
   });
 
 
-  it.skip('logout', () => {
+  it('logout', () => {
+    cy.login()
     cy.get('.sc-jgrJph > .sc-bdvvtL').click()
   });
 
