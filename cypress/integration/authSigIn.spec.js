@@ -74,7 +74,7 @@ describe('AuthSigIn', () => {
   });
 
 
-  it('emptyEmailField', () => {
+  it.skip('emptyEmailField', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(2) >> input').type('123456');

@@ -29,7 +29,7 @@ describe('User', () => {
   });
 
 
-  it('emailAlreadyExists', () => {
+  it.skip('emailAlreadyExists', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -82,6 +82,49 @@ describe('User', () => {
     cy.get(':nth-child(2) > .sc-jcFjpl > input').type('teste@gmail.com');
 
     cy.get(':nth-child(3) > .sc-jcFjpl > input').type('12345');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
+  it.skip('emptyNameField', () => {
+    cy.visit(baseUrl);
+
+    cy.get('.fDRVEk').click()
+
+    cy.get(':nth-child(2) > .sc-jcFjpl > input').type('teste6s6@gmail.com');
+
+    cy.get(':nth-child(3) > .sc-jcFjpl > input').type('123456');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
+  it.skip('emptyEmailField', () => {
+    cy.visit(baseUrl);
+
+    cy.get('.fDRVEk').click()
+
+    cy.get(':nth-child(1) > .sc-jcFjpl > input').type('testeCypress1');
+
+    cy.get(':nth-child(3) > .sc-jcFjpl > input').type('123456');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
+  it.skip('emptyPasswordField', () => {
+    cy.visit(baseUrl);
+
+    cy.get('.fDRVEk').click()
+
+    cy.get(':nth-child(1) > .sc-jcFjpl > input').type('testeCypress1');
+
+
+    cy.get(':nth-child(2) > .sc-jcFjpl > input').type('teste6s6@gmail.com');
 
     cy.get('.sc-kDTinF > .sc-bdvvtL').click();
 
