@@ -4,13 +4,14 @@ describe('AuthResetPassword', () => {
 
   const baseUrl = 'http://localhost:3000/'
 
-  it.skip('resetPassword', () => {
+
+  it('resetPassword', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
 
 
-    cy.get('input').type('luby@admin.com');
+    cy.get('input').type('resetPassword@gmail.com');
 
 
     cy.intercept('POST', '**/reset').as('reset');
@@ -28,7 +29,7 @@ describe('AuthResetPassword', () => {
 
     });
 
-    const newPassword = '123456';
+    const newPassword = 'secret';
 
     cy.get('input').type(newPassword);
 
@@ -46,7 +47,7 @@ describe('AuthResetPassword', () => {
   });
 
 
-  it('emailNotFound', () => {
+  it.skip('emailNotFound', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
