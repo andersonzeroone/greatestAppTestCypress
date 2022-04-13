@@ -5,7 +5,7 @@ describe('AuthResetPassword', () => {
   const baseUrl = 'http://localhost:3000/'
 
 
-  it('resetPassword', () => {
+  it.skip('resetPassword', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
@@ -117,6 +117,44 @@ describe('AuthResetPassword', () => {
     const newPassword = '12345';
 
     cy.get('input').type(newPassword);
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click()
+
+
+  });
+
+
+  it.skip('emptyEmailField', () => {
+    cy.visit(baseUrl);
+
+    cy.get('.sc-kHOZwM').click();
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
+  it('emptyPasswordField', () => {
+    cy.visit(baseUrl);
+
+    cy.get('.sc-kHOZwM').click();
+
+
+    cy.get('input').type('resetPassword@gmail.com');
+
+
+    cy.intercept('POST', '**/reset').as('reset');
+
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+
+    cy.wait('@reset').then(({ response }) => {
+      expect(response.statusCode).be.eq(200);
+      expect(response.body).has.property('token');
+      expect(response.body.token).is.not.null;
+
+    });
 
     cy.get('.sc-kDTinF > .sc-bdvvtL').click()
 
