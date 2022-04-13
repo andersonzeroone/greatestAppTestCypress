@@ -23,6 +23,7 @@ describe('AuthSigIn', () => {
     })
   });
 
+
   it.skip('emailNotFound', () => {
     cy.visit(baseUrl);
 
@@ -58,7 +59,7 @@ describe('AuthSigIn', () => {
   });
 
 
-  it('passwordInvalid', () => {
+  it.skip('passwordInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('a@gmail.com');
@@ -71,4 +72,26 @@ describe('AuthSigIn', () => {
     cy.get('.sc-kDTinF > .sc-bdvvtL').click();
 
   });
+
+
+  it('emptyEmailField', () => {
+    cy.visit(baseUrl);
+
+    cy.get(':nth-child(2) >> input').type('123456');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
+  it.skip('emptyPasswordField', () => {
+    cy.visit(baseUrl);
+
+    cy.get(':nth-child(1) >> input').type('a@gmail.com');
+
+    cy.get('.sc-kDTinF > .sc-bdvvtL').click();
+
+  });
+
+
 });
