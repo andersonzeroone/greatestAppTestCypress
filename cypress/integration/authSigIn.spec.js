@@ -23,7 +23,7 @@ describe('AuthSigIn', () => {
     })
   });
 
-  it.skip('loginNotFound', () => {
+  it.skip('emailNotFound', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('lubyTeste@admin.com');
@@ -43,7 +43,7 @@ describe('AuthSigIn', () => {
   });
 
 
-  it.skip('loginEmailInvalid', () => {
+  it.skip('emailInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('agmail.com');
@@ -58,7 +58,7 @@ describe('AuthSigIn', () => {
   });
 
 
-  it('loginPasswordInvalid', () => {
+  it('passwordInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('a@gmail.com');
