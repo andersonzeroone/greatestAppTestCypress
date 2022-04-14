@@ -3,7 +3,7 @@
 
 describe('Bets', () => {
 
-  it.skip('betFiltered', () => {
+  it('betFiltered', () => {
     cy.login()
 
     cy.get('.e-dropdownbase').click();
@@ -13,7 +13,7 @@ describe('Bets', () => {
   });
 
 
-  it.skip('addBetsInCart', () => {
+  it('addBetsInCart', () => {
     cy.login()
 
     cy.get('.sc-gIDmLj > .sc-bdvvtL').click();

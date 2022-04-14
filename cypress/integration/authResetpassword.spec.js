@@ -2,10 +2,10 @@
 
 describe('AuthResetPassword', () => {
 
-  const baseUrl = 'http://localhost:3000/'
+  const baseUrl = 'http://localhost:3000/';
 
 
-  it.skip('resetPassword', () => {
+  it('resetPassword', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
@@ -47,7 +47,7 @@ describe('AuthResetPassword', () => {
   });
 
 
-  it.skip('emailNotFound', () => {
+  it('emailNotFound', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
@@ -72,7 +72,7 @@ describe('AuthResetPassword', () => {
   });
 
 
-  it.skip('emailInvalid', () => {
+  it('emailInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get(':nth-child(1) >> input').type('testgmail.com');
@@ -90,7 +90,7 @@ describe('AuthResetPassword', () => {
   });
 
 
-  it.skip('passwordInvalid', () => {
+  it('passwordInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();
@@ -124,7 +124,7 @@ describe('AuthResetPassword', () => {
   });
 
 
-  it.skip('emptyEmailField', () => {
+  it('emptyEmailField', () => {
     cy.visit(baseUrl);
 
     cy.get('.sc-kHOZwM').click();

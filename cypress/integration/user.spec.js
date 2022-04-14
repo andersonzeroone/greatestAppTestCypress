@@ -4,7 +4,7 @@ describe('User', () => {
 
   const baseUrl = 'http://localhost:3000/';
 
-  it.skip('createUser', () => {
+  it('createUser', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -12,7 +12,7 @@ describe('User', () => {
     cy.get(':nth-child(1) > .sc-jcFjpl > input').type('testeCypress1');
 
 
-    cy.get(':nth-child(2) > .sc-jcFjpl > input').type('teste6s6@gmail.com');
+    cy.get(':nth-child(2) > .sc-jcFjpl > input').type('teste1236@gmail.com');
 
     cy.get(':nth-child(3) > .sc-jcFjpl > input').type('123456');
 
@@ -29,7 +29,7 @@ describe('User', () => {
   });
 
 
-  it.skip('emailAlreadyExists', () => {
+  it('emailAlreadyExists', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -54,7 +54,7 @@ describe('User', () => {
   });
 
 
-  it.skip('emailInvalid', () => {
+  it('emailInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -71,7 +71,7 @@ describe('User', () => {
   });
 
 
-  it.skip('passwordInvalid', () => {
+  it('passwordInvalid', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -88,7 +88,7 @@ describe('User', () => {
   });
 
 
-  it.skip('emptyNameField', () => {
+  it('emptyNameField', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -102,7 +102,7 @@ describe('User', () => {
   });
 
 
-  it.skip('emptyEmailField', () => {
+  it('emptyEmailField', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
@@ -116,7 +116,7 @@ describe('User', () => {
   });
 
 
-  it.skip('emptyPasswordField', () => {
+  it('emptyPasswordField', () => {
     cy.visit(baseUrl);
 
     cy.get('.fDRVEk').click()
